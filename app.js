@@ -29,7 +29,7 @@ function startApp(){
             "View Roles",
             "View Departments",
             "View Employees",
-            "Update Employee",
+            //"Update Employee",
             "Leave"
 
         ]
@@ -43,6 +43,22 @@ function startApp(){
 
             case "Add Department": 
                 addDepartment();
+            break;
+
+            case "View Employees":
+                viewEmployee();
+            break;
+
+            case "Add Employee": 
+                addEmployee();
+            break;
+
+            case "View Roles":
+                viewRole();
+            break;
+
+            case "Add Role": 
+                addRole();
             break;
 
 
@@ -80,7 +96,19 @@ function addDepartment() {
     });
 }
 
+function viewEmployee() {
+    
+  let query = "SELECT * FROM employee";
+  connection.query(query, function(err, res) {
+    if (err) throw err;
+    console.table(res);
+    
+    startApp();
+  
+    });
+  
 
+}
 
 
 function addEmployee() {
@@ -125,3 +153,15 @@ function addEmployee() {
 
 }
 
+function viewRole() {
+    let query = "SELECT * FROM role";
+    connection.query(query, function(err, res) {
+      if (err) throw err;
+      console.table(res);
+      
+      startApp();
+    
+      });
+}
+
+startApp();
