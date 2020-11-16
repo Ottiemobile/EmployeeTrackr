@@ -88,7 +88,7 @@ function addDepartment() {
         }
     ])
     .then(function(answer) {
-        connection.query("INSERT INTO department_name VALUES (?)", [answer.departmentName], function(err,res) {
+        connection.query("INSERT INTO department (name) VALUES (?)", [answer.departmentName], function(err,res) {
         if (err) throw err;
         console.table(res)
         startApp();  
@@ -162,6 +162,43 @@ function viewRole() {
       startApp();
     
       });
+}
+
+function addRole() {
+    inquirer.prompt([
+        {
+            type:"input",
+            message: "Please enter the name of the new Role:",
+            name: "roleTitle"
+        },
+
+
+
+        {
+            type: "input",
+            message: "Enter the Salary of the new role:",
+            name: "roleSalary"
+        },
+
+        {
+            type: "input",
+            message: "Please enter the Department ID Number (DIN): ",
+            name: "roleDept"
+        }
+    ])
+
+    .then(function(answer) {
+        connection.query("INSERT INTO role (title, salary, department_id) VALUES (?,?,?)" , [answer.roleTitle, answer.roleSalary, answer.roleDept], function(err, res) {
+            if (err) throw err;
+            console.table(res);
+            
+            startApp();
+        });
+    
+    
+    });
+
+
 }
 
 startApp();
