@@ -20,10 +20,10 @@ VALUES
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES
 ("Sorret", "Elhas", 5, null),
-("Stan", "Wawrinka", 3, 1),
-("Rafa", "Nadal", 5, 1),
-("Kei", "Nishikori", 2, 1),
-("Novak", "Djokovic", 3, 1),
-("Pete", "Sampras", 1, 1),
-("Nick", "Kyrgios", 4, 1);
+("Man", "Walker", 3, 1),
+("He", "Dude", 5, 1),
+("Man", "Guy", 2, 1),
+("Dave", "Travis", 3, 1),
+("Alfred", "Alph", 1, 1),
+("Wilfred", "A.", 4, 1);
 
