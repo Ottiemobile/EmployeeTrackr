@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 
 const mysql = require('mysql2');
 
-const db = require('./db');
+
 const connection = require('./db/connection');
 
  require('console.table');
@@ -45,6 +45,10 @@ function startApp(){
                 addDepartment();
             break;
 
+
+            case "Leave":
+                quit();
+            break;
         }
     });
 
